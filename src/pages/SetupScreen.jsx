@@ -51,7 +51,7 @@ export default function SetupScreen() {
         setLoading(true)
 
         try {
-            const finalShopID = shopID || Math.random().toString(36).substring(2, 11)
+            const finalShopID = shopID || crypto.randomUUID()
 
             await shopsTable.put({
                 id: finalShopID,

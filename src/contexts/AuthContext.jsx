@@ -58,11 +58,8 @@ export function AuthProvider({ children }) {
   }, [refreshShopsList, checkShopStatus])
 
   const selectShop = useCallback(async (id) => {
-    const success = await checkShopStatus(id)
-    if (success) {
-      console.log('✓ Shop selected:', id)
-    }
-    return success
+  const success = await checkShopStatus(id)
+  return success
   }, [checkShopStatus])
 
   const logout = useCallback(() => {

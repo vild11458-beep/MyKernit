@@ -40,12 +40,9 @@ export const transactionsTable = db.table('transactions')
  */
 export async function initializeDatabase() {
   try {
-    await db.open()
-    const shopCount = await shopsTable.count()
-    console.log(`✓ Database initialized ${shopCount > 0 ? `with ${shopCount} shops` : '(empty state)'}`)
+  await db.open()
   } catch (error) {
-    console.error('✗ Database initialization error:', error)
-    throw error
+  throw error
   }
 }
 
